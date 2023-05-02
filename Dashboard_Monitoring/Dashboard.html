@@ -408,7 +408,45 @@
             }
           }
         }
-        }
+*/      const gaugeData = chartData.map(row => ({value: row[1]}));
+        const chartconFig = {
+          type: "bulb",
+                id: "bulbGauge",
+                renderAt: "gaugeChart",
+                width: "200",
+                height: "200",
+                dataFormat: "json",
+                dataSource: {
+                  chart: {
+                    caption: "Room Occupancy Status",
+                    upperlimit: "1",
+                    lowerlimit: "0",
+                    theme: "fusion"
+                  },
+                  colorrange:{
+                    color: [
+                  {
+                    minvalue: "0",
+                    maxvalue: "0",
+                    label: "Room Empty",
+                    code: "#FF0000"
+                  },
+                  {
+                  minvalue:"1",
+                  label: "Room Occupied",
+                  code: "#00FF00"
+                 }
+                ]
+                  },
+                  value: gaugeData
+    }
+  }
+    const chartInstance = new FusionCharts(chartConfig);
+    
+    chartInstance.render(); 
+  }
+      */
+  }
     </script>
   </head>
 
